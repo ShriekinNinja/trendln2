@@ -3,28 +3,21 @@
 Support and Resistance Trend lines Calculator for Financial Analysis
 ====================================================================
 
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/trendln)](https://pypi.python.org/pypi/trendln)
-[![PyPI - Version](https://img.shields.io/pypi/v/trendln.svg?maxAge=60)](https://pypi.python.org/pypi/trendln)
-[![PyPI - Status](https://img.shields.io/pypi/status/trendln.svg?maxAge=60)](https://pypi.python.org/pypi/trendln)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/trendln.svg?maxAge=2592000&label=installs&color=%2327B1FF)](https://pypi.python.org/pypi/trendln)
-[![PyPI - License](https://img.shields.io/pypi/l/trendln)](https://pypi.python.org/pypi/trendln)
-[![PyPI - Implementation](https://img.shields.io/pypi/implementation/trendln)](https://pypi.python.org/pypi/trendln)
-[![Latest push build on default branch](https://travis-ci.com/GregoryMorse/trendln.svg?branch=master)](https://travis-ci.com/GregoryMorse/trendln)
-[![GitHub stars](https://img.shields.io/github/stars/GregoryMorse/trendln?style=social)](https://github.com/GregoryMorse/trendln)
-
-## This is a fork of the legenday package updated to work with latest deps
-### 
+### This is a fork of the legendary package updated to work with latest dependencies. No change in logic.
 
 Note
 ----
 
-This library can calculate and plot trend lines for any time series, not only for its primary intended purpose of financial analysis.
+This library can calculate and plot trend lines for any time series, not only for its
+primary intended purpose of financial analysis.
 
 [Changelog »](./CHANGELOG.md)
 
 ---
 
-==> Check out this article on [Programmatic Identification of Support/Resistance Trend lines with Python](https://towardsdatascience.com/programmatic-identification-of-support-resistance-trend-lines-with-python-d797a4a90530) or [alternatively here](https://medium.com/@gregory.morse1/programmatic-identification-of-support-resistance-trend-lines-with-python-d797a4a90530)
+==> Check out this article
+on [Programmatic Identification of Support/Resistance Trend lines with Python](https://towardsdatascience.com/programmatic-identification-of-support-resistance-trend-lines-with-python-d797a4a90530)
+or [alternatively here](https://medium.com/@gregory.morse1/programmatic-identification-of-support-resistance-trend-lines-with-python-d797a4a90530)
 for details on how the library and its features are implemented and work.
 
 ---
@@ -111,12 +104,12 @@ Documentation for usage:
 
 The **get_extrema** function will calculate all of the local minima and local maxima
 without performing the full trend line calculation.
-	
+
 	minimaIdxs, maximaIdxs = trendln.get_extrema(hist[-1000:].Close)
 	maximaIdxs = trendln.get_extrema((None, hist[-1000:].High)) #maxima only
 	minimaIdxs, maximaIdxs = trendln.get_extrema((hist[-1000:].Low, hist[-1000:].High))
 
-Documentation for usage:	
+Documentation for usage:
 
 	minimaIdxs, maximaIdxs = trendln.get_extrema(
 		h,
@@ -135,7 +128,7 @@ calculation function.
 	plt.savefig('suppres.svg', format='svg')
 	plt.show()
 	plt.clf() #clear figure
-	
+
 Documentation for usage:
 
 	fig = trendln.plot_support_resistance(
@@ -154,16 +147,16 @@ Documentation for usage:
 		accuracy=1)
 	# other parameters as per calc_support_resistance
 	# fig - returns matplotlib.pyplot.gcf() or the current figure
-	
+
 The **plot_sup_res_date** function will do the same as **plot_support_resistance** with
 help for nice formatting of dates based on a pandas date index.
-	
+
 	idx = hist[-1000:].index
 	fig = trendln.plot_sup_res_date((hist[-1000:].Low, hist[-1000:].High), idx) #requires pandas
 	plt.savefig('suppres.svg', format='svg')
 	plt.show()
 	plt.clf() #clear figure
-	
+
 Documentation for usage:
 
 	fig = trendln.plot_sup_res_date( #automatic date formatter based on US trading calendar
@@ -182,9 +175,11 @@ Documentation for usage:
 		accuracy=1)
 	# other parameters as per plot_support_resistance
 
-Finally, for the above mentioned article, some figures were generated for reference material,
-while others use the library to demonstrate how it works.  These can be generated as well:
-	
+Finally, for the above mentioned article, some figures were generated for reference
+material,
+while others use the library to demonstrate how it works. These can be generated as
+well:
+
 	trendln.plot_sup_res_learn('.', hist)
 
 Documentation for usage:
@@ -192,7 +187,7 @@ Documentation for usage:
 	trendln.plot_sup_res_learn( #draw learning figures, included for reference material only
 		curdir, #base output directory for png and svg images, will be saved in 'data' subfolder
 		hist) #pandas DataFrame containing Close and date index
-	
+
 ![Example output of plotting support resistance](https://github.com/GregoryMorse/trendln/blob/master/img/suppres.svg)
 
 Installation
@@ -200,41 +195,27 @@ Installation
 
 Install ``trendln`` using ``pip``:
 
-    $ pip install trendln --upgrade --no-cache-dir
-
-
-Install ``trendln`` using ``conda``:
-
-    $ conda install -c GregoryMorse trendln
-
-Installation sanity check:
-
-	import trendln
-	#requires yfinance library install, not a package requirement, but used to assist with sanity check
-	#pip install yfinance
-	directory = '.' # a 'data' folder will be created here if not existing to store images
-	trendln.test_sup_res(directory) #simple tests that all methods are executing correct, assertion or other error indicates problem
+    $ pip install trendln2 --upgrade
 
 Requirements
 ------------
 
-* [Python](https://www.python.org) >= 2.7, 3.4+
-* [numpy](http://www.numpy.org) >= 1.15
-* [findiff](https://github.com/maroba/findiff) >= 0.7.0 (if using default numerical differentiation method)
-* [scikit-image](https://scikit-image.org) >= 0.14.0 (if using image-based Hough line transform or its probabilistic variant)
-* [pandas](https://github.com/pydata/pandas) >= 0.23.1 (if using date plotting function, or using naive minima/maxima methods)
-* [matplotlib](https://matplotlib.org) >= 2.2.4 (if using any plotting function)
-
+* [Python](https://www.python.org) >= 3.13
+* [numpy](http://www.numpy.org) >= 2.3.5
+* [findiff](https://github.com/maroba/findiff) >= 0.12.1 (if using default numerical
+  differentiation method)
+* [scikit-image](https://scikit-image.org) >= 0.25.2 (if using image-based Hough line
+  transform or its probabilistic variant)
+* [pandas](https://github.com/pydata/pandas) >= 2.3.3 (if using date plotting function,
+  or using naive minima/maxima methods)
+* [matplotlib](https://matplotlib.org) >= 3.10.7 (if using any plotting function)
 
 License
 -------
 
-**trendln** is distributed under the **MIT License**. See the [LICENSE](./LICENSE) file in the release for details.
+**trendln2** is distributed under the **MIT License**. See the [LICENSE](./LICENSE) file
+in the release for details.
 
 Support
 -------
-
-Any questions, issues or ideas can kindly be submitted for review.
-
-**Gregory Morse**
-<gregory.morse@live.com>
+None

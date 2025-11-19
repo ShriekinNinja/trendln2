@@ -7,20 +7,21 @@
 
 """Support and Resistance Trendlines Calculator for Financial Analysis"""
 
-#pip install twine
+# pip install twine
 
-#cd /D D:\OneDrive\Documents\Projects\trader\trendln
-#del dist\*.tar.gz
-#"%ProgramFiles%\Python37\python.exe" setup.py sdist
-#"%ProgramFiles%\Python37\scripts\twine.exe" upload dist/* --verbose
-#"%ProgramFiles%\Python37\scripts\pip.exe" install trendln --upgrade
-#"%ProgramData%\Anaconda3\scripts\pip.exe" install trendln --upgrade
-#import importlib
-#importlib.reload(trendln)
+# cd /D D:\OneDrive\Documents\Projects\trader\trendln
+# del dist\*.tar.gz
+# "%ProgramFiles%\Python37\python.exe" setup.py sdist
+# "%ProgramFiles%\Python37\scripts\twine.exe" upload dist/* --verbose
+# "%ProgramFiles%\Python37\scripts\pip.exe" install trendln --upgrade
+# "%ProgramData%\Anaconda3\scripts\pip.exe" install trendln --upgrade
+# import importlib
+# importlib.reload(trendln)
 
-from setuptools import setup, find_packages
 import io
 from os import path
+
+from setuptools import find_packages, setup
 
 here = path.abspath(path.dirname(__file__))
 
@@ -29,8 +30,8 @@ with io.open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='trendln',
-    version="0.1.10",
+    name='trendln2',
+    version="2.0.25",
     description='Support and Resistance Trend lines Calculator for Financial Analysis',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -43,7 +44,6 @@ setup(
         # 'Development Status :: 3 - Alpha',
         # 'Development Status :: 4 - Beta',
         'Development Status :: 5 - Production/Stable',
-
 
         'Operating System :: OS Independent',
         'Intended Audience :: Developers',
@@ -58,8 +58,9 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
-    platforms = ['any'],
+    platforms=['any'],
     keywords='trendlines, trend lines, trend, support, resistance, trends, technical, indicators, financial, analysis',
     packages=find_packages(exclude=['contrib', 'docs', 'tests', 'examples']),
-    install_requires=['numpy>=1.15', 'findiff>=0.7.0', 'scikit-image>=0.14.0', 'pandas>=0.23.1', 'matplotlib>=2.2.4'],
+    install_requires=['numpy>=2.3.5', 'findiff>=0.12.1', 'scikit-image>=0.25.2',
+                      'pandas>=2.3.3', 'matplotlib>=3.10.7'],
 )

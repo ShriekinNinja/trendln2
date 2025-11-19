@@ -16,3 +16,8 @@ Change Log
 - Refactored several other places to eliminate duplicate code and improve performance
 - Added accuracy parameter for numerical differentiation method
 - Test coverage for important part of the new functionality
+
+2.0.25
+-------
+- Updated all dependencies
+- Made it work with them

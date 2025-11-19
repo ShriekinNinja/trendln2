@@ -1,4 +1,4 @@
-# trendln
+# trendln2
 
 Support and Resistance Trend lines Calculator for Financial Analysis
 ====================================================================
@@ -11,6 +11,9 @@ Support and Resistance Trend lines Calculator for Financial Analysis
 [![PyPI - Implementation](https://img.shields.io/pypi/implementation/trendln)](https://pypi.python.org/pypi/trendln)
 [![Latest push build on default branch](https://travis-ci.com/GregoryMorse/trendln.svg?branch=master)](https://travis-ci.com/GregoryMorse/trendln)
 [![GitHub stars](https://img.shields.io/github/stars/GregoryMorse/trendln?style=social)](https://github.com/GregoryMorse/trendln)
+
+## This is a fork of the legenday package updated to work with latest deps
+### 
 
 Note
 ----
